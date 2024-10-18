@@ -7,18 +7,14 @@
         </a>
 
         <ul>
+            @foreach($categories as $category)
             <li class="mb-2">
                 <a href="" class="p-2 rounded-md flex bg-slate-800 items-center gap-2 text-white/60 hover:text-white font-semibold text-xs capitalize">
-                    <span class="size-2 rounded-full" style="background-color: #00aced"></span>
-                    ejemplo
+                    <span class="size-2 rounded-full" style="background-color: {{ $category->color }}"></span>
+                    {{ $category->name }}
                 </a>
             </li>
-            <li>
-                <a href="" class="p-2 rounded-md flex bg-slate-800 items-center gap-2 text-white/60 hover:text-white font-semibold text-xs capitalize">
-                    <span class="size-2 rounded-full" style="background-color: #000"></span>
-                    todos los resultados
-                </a>
-            </li>
+            @endforeach
         </ul>
     </div>
     <div class="w-full"></div>
