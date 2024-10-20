@@ -19,7 +19,18 @@
         </ul>
     </div>
     <div class="w-full">
-        <!-- Formulario -->
+
+        <form class="mb-4" action="">
+            <input
+                class="bg-slate-800 border-0 rounded-md w-1/3 p-3 text-white/60 text-xs"
+                type="search"
+                name=""
+                id=""
+                placeholder="// ..."
+                wire:model.live.debounce.250ms="search"
+            >
+        </form>
+
         @foreach($threads as $thread)
             <div class="rounded-md bg-gradient-to-r from-slate-800 to-slate-900 hover:to-slate-800 mb-4">
                 <div class="p-4 flex gap-4">
