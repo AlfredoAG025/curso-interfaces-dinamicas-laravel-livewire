@@ -9,13 +9,24 @@
         <ul>
             @foreach($categories as $category)
                 <li class="mb-2">
-                    <a href=""
+                    <a href="#"
+                       wire:click.prevent="filterByCategory('{{$category->id}}')"
                        class="p-2 rounded-md flex bg-slate-800 items-center gap-2 text-white/60 hover:text-white font-semibold text-xs capitalize">
                         <span class="size-2 rounded-full" style="background-color: {{ $category->color }}"></span>
                         {{ $category->name }}
                     </a>
                 </li>
             @endforeach
+
+            <li>
+                <a href="#"
+                   wire:click.prevent="filterByCategory('')"
+                   class="p-2 rounded-md flex bg-slate-800 items-center gap-2 text-white/60 hover:text-white font-semibold text-xs capitalize">
+                    <span class="size-2 rounded-full" style="background-color: #000"></span>
+                    Todos los resultados
+                </a>
+            </li>
+
         </ul>
     </div>
     <div class="w-full">
